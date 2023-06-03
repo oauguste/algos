@@ -3,6 +3,8 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
+
+  //append time complexity is O(1)
   append(value) {
     const newNode = new Node(value);
     if (!this.head) {
@@ -13,6 +15,7 @@ class LinkedList {
     this.tail.nextNode = newNode;
     this.tail = newNode;
   }
+  //preprend has a time complexity of O(1)
   prepend(value) {
     const newNode = new Node(value);
     if (!this.head) {
@@ -23,6 +26,8 @@ class LinkedList {
       this.head = newNode;
     }
   }
+  /* size has a time complexity of O(n)
+ where n is the number of nodes in the list  */
   size() {
     let size = 0;
     let currentNode = this.head;
@@ -32,12 +37,18 @@ class LinkedList {
     }
     return size;
   }
+
+  // getHead has a time complexity of O(1)
   getHead() {
     return this.head ? this.head : null;
   }
+
+  // getTail has a time complexity of O(1)
   getTail() {
     return this.tail ? this.tail : null;
   }
+
+  //The time complexity for this method is O(n)
   contains(value) {
     let currentNode = this.head;
     while (
@@ -51,6 +62,8 @@ class LinkedList {
     }
     return true;
   }
+
+  //The time complexity for this method is O(n)
   at(index) {
     if (index < 0 || index >= this.size()) {
       throw new Error("Index out of bounds");
@@ -63,6 +76,8 @@ class LinkedList {
     }
     return currentNode;
   }
+
+  //The time complexity for this method is O(n)
   find(value) {
     let index = 0;
     let currentNode = this.head;
